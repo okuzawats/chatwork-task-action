@@ -3,7 +3,7 @@ require 'net/http'
 params = { 
   token: ENV['API_TOKEN'],
   room_id: ENV['ROOM_ID'],
-  user_ids: ENV['USER_IDS']
+  user_ids: ENV['USER_IDS'],
   body: ENV['BODY'].delete_prefix('"').delete_suffix('"'),
 }
 
