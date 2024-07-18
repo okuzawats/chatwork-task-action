@@ -1,10 +1,10 @@
 require 'net/http'
 
 params = {
-  token: ENV['API_TOKEN'],
-  room_id: ENV['ROOM_ID'],
-  user_ids: ENV['USER_IDS'],
-  body: ENV['BODY'].delete_prefix('"').delete_suffix('"'),
+  token: ENV.fetch('API_TOKEN', nil),
+  room_id: ENV.fetch('ROOM_ID', nil),
+  user_ids: ENV.fetch('USER_IDS', nil),
+  body: ENV.fetch('BODY', nil).delete_prefix('"').delete_suffix('"')
 }
 
 uri = URI.parse("https://api.chatwork.com/v2/rooms/#{params[:room_id]}/tasks")
