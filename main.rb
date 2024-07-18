@@ -1,6 +1,6 @@
 require 'net/http'
 
-params = { 
+params = {
   token: ENV['API_TOKEN'],
   room_id: ENV['ROOM_ID'],
   user_ids: ENV['USER_IDS'],
