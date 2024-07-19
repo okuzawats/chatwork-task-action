@@ -1,9 +1,7 @@
 # Chatwork Task Action
 
 [![actionlint](https://github.com/okuzawats/chatwork-task-action/actions/workflows/actionlint.yml/badge.svg)](https://github.com/okuzawats/chatwork-task-action/actions/workflows/actionlint.yml)
-
 [![yamllint](https://github.com/okuzawats/chatwork-task-action/actions/workflows/yamllint.yml/badge.svg)](https://github.com/okuzawats/chatwork-task-action/actions/workflows/yamllint.yml)
-
 [![rubocop](https://github.com/okuzawats/chatwork-task-action/actions/workflows/rubocop.yml/badge.svg)](https://github.com/okuzawats/chatwork-task-action/actions/workflows/rubocop.yml)
 
 Chatworkのタスクを作成するActionです。指定したルームの、指定したユーザーにタスクを割り当てます。
