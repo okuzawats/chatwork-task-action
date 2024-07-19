@@ -1,0 +1,37 @@
+name: "Chatwork Task Action"
+description: "Create Chatwork Task."
+author: "okuzawats"
+branding:
+  icon: "check-square"
+  color: "red"
+
+inputs:
+  apiToken:
+    required: true
+    description: "Chatwork API token"
+  roomId:
+    required: true
+    description: "Chatroom ID"
+  userIds:
+    required: true
+    description: "User Id to be assign the task. You can specify multiple users, separated by commas(example: 1,3,5)"
+  body:
+    required: true
+    description: "Task body"
+
+runs:
+  using: "composite"
+  steps:
+    - name: "checkout"
+      uses: "actions/checkout@v4"
+    - name: "set up ruby"
+      uses: "ruby/setup-ruby@v1"
+    - name: "run action"
+      shell: "sh"
+      env:
+        API_TOKEN: "${{ inputs.apiToken }}"
+        ROOM_ID: "${{ inputs.roomId }}"
+        USER_IDS: "${{ inputs.userIds }}"
+        BODY: "${{ inputs.body }}"
+      run: |
+        ruby $GITHUB_ACTION_PATH/main.rb
